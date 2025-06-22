@@ -1,26 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// src/App.tsx
+import { useCounter } from './store/useCounter'
 
 function App() {
+  const { count, increment, decrement } = useCounter()
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ textAlign: 'center', marginTop: '3rem' }}>
+      <h1>카운터: {count}</h1>
+      <button onClick={increment}>+ 증가</button>
+      <button onClick={decrement}>- 감소</button>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
